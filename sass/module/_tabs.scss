@@ -1,45 +1,94 @@
 .tabSet {
-  margin: 30px auto;
   .tabItems {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 auto;
+    justify-content: center;
+    margin-top: -82px;
     button {
-      flex: 1 1 auto;
-      font-size: 1em;
-      height: 2.8em;
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+      background-color: #ffbe23;
+      position: relative;
       text-align: center;
-      border: none;
-      margin: 1px;
-      border-radius: 0;
-      box-shadow: none;
-      background: #ddd;
+      color: #0948a6;
+      font-size: 17px;
+      font-weight: bold;
+      z-index: 3;
       cursor: pointer;
-      &:hover {
-        background: #cdd;
-      }
-      &:focus-visible {
-        outline: none;
-        box-shadow: 0 0px 0px 2px $aFocus inset;
-        @include screen('mobile') {
-          box-shadow: none;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      transition: none;
+      &:first-child {
+        &::after {
+          display: none;
         }
       }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: solid 9px transparent;
+        border-left: solid 12px $primary;
+        border-right: solid 9px transparent;
+        border-bottom: solid 9px transparent;
+        position: absolute;
+        top: calc(50% - 9px);
+        left: -25px;
+        margin: auto;
+      }
       &.active {
-        cursor: default;
-        background: $colorPrimary;
-        color: #fff;
+        border: solid 8px $primary;
+        background-color: #fff;
+        color: #0948a6;
+        &::before {
+          content: '';
+          width: 0;
+          height: 0;
+          border-top: solid 12px $primary;
+          border-left: solid 8px transparent;
+          border-right: solid 8px transparent;
+          border-bottom: solid 8px transparent;
+          position: absolute;
+          bottom: -27px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
       }
     }
   }
-
+  .tabContentGroup {
+    height: rem(200);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
   .tabContent {
     display: none;
-    position: relative;
-    padding: 15px;
-    box-shadow: #bbb 0 0 0 1px inset;
+    // position: relative;
+    // padding: 15px;
+    // box-shadow: #bbb 0 0 0 1px inset;
+    width: 600px;
+    height: 200px;
+    border-radius: 5px;
+    border: solid 1.5px $primary;
+    box-shadow: -10px 25px 0 $primary;
+    position: absolute;
+    background-color: #fafafa;
+    padding: 15px 40px;
+    color: #000;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    align-items: center;
     &.active {
-      display: block;
+      // display: block;
+      display: flex;
     }
     a:focus {
       outline: none;
@@ -55,15 +104,15 @@
       display: block;
       box-shadow: none;
       padding: 0;
-      .tabBtn {
-        width: 100%;
-        margin: 0 0 5px 0;
-        &.active {
-          background: $colorPrimary;
-          color: #fff;
-          border-color: $colorPrimary;
-        }
-      }
+      // .tabBtn {
+      //   width: 100%;
+      //   margin: 0 0 5px 0;
+      //   &.active {
+      //     background: $colorPrimary;
+      //     color: #fff;
+      //     border-color: $colorPrimary;
+      //   }
+      // }
       a:focus {
         outline: none;
         box-shadow: 0 0px 0px 2px #1aadfa inset;

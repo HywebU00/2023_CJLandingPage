@@ -53,9 +53,31 @@ body {
     line-height: 1.25em;
     font-size: rem(40);
     color: #0948a6;
+    // color: transparent;
+    span {
+      display: inline-block;
+      font-weight: 900;
+    }
+    &.start {
+      span {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
     &.over {
       color: #0948a6;
+      span {
+        &::after {
+          width: 0;
+        }
+      }
     }
+  }
+  h3 {
+    font-size: 26px;
+    line-height: 34px;
+    letter-spacing: 1.2px;
   }
 }
 .scrollArea {

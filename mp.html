@@ -16,8 +16,6 @@
 </head>
 
 <body>
-  <!-- 直接跳主內容區 -->
-  <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
   <!-- wrapper Start -->
   <div class="wrapper">
     <!-- header Start -->
@@ -59,9 +57,7 @@
     <!-- header End -->
     <!-- main Start -->
     <main id="center" class="main">
-      <a class="accessKey" href="#ac" id="ac" accesskey="C" title="主要內容區">:::</a>
       <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
-      <!-- //// class 都可以隨意命名 !!! ///// -->
       <section id="section1" class="col-12 full">
         <div class="" style="max-width: 900px; margin: 0 auto;">
           <div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:580px; height:420px">
@@ -85,7 +81,7 @@
                 國民法官雖然沒有法律背景，但可以把不同的生活經驗、價值思考、法律感情，帶進法庭。藉著國民法官的參與，可以讓司法審判更透明，讓司法專業與外界對話，彼此交流與反思，藉此促進國民與法院間的相互理解。</p>
             </div>
             <div class="whatImg">
-              <div class="backblock"></div>
+              <!-- <div class="backblock"></div> -->
               <img src="images/customize/tree.png" class="" data-wow-offset="700">
             </div>
           </div>
@@ -96,7 +92,7 @@
       <section id="section3" class="col-12">
         <div class="container">
           <div class="h1">國民法官選任程序</div>
-          <div class="">
+          <div class="title">
             <h2>
               <span>誰可以當國民法官？</span>
               <img src="images/customize/svg/3job.svg" alt="">
@@ -246,100 +242,50 @@
             <div class="tabSet">
               <!-- 頁籤的上一層父物件要加 role="tablist" -->
               <div class="tabItems">
-                <button type="button" class="tabBtn">頁籤項ㄧ</button>
-                <button type="button" class="tabBtn">頁籤項二</button>
-                <button type="button" class="tabBtn">頁籤項三</button>
-                <button type="button" class="tabBtn">頁籤項四</button>
+                <button type="button" class="tabBtn">初選名冊</button>
+                <button type="button" class="tabBtn">複選名冊</button>
+                <button type="button" class="tabBtn">候選<br>國民法官</button>
+                <button type="button" class="tabBtn">國民法官<br>產生</button>
               </div>
               <div class="tabContentGroup">
                 <!-- 頁籤內容要加 role="tabpanel" -->
                 <div class="tabContent" role="tabpanel">
                   <div class="content">
                     <ul>
-                      <li>
-                        <a href="">使用到的ARIA:</a><br />
-                        <code>role="tablist"</code>, <code>role="tab"</code>, <code>role="tabpanel"</code>, <code>aria-selected="<i>true/false</i>"</code>, <code>aria-label="<i>TEXT</i>"</code>,
-                        <code>aria-controls="<i>ID</i>"</code>
-                      </li>
-                      <li>
-                        <a href="#">處理頁籤項</a>
-                        <ol>
-                          <li>為每個作為頁籤項的<code>&lt;button&gt;</code>加上<code>role="tab"</code>，其上一層父元件加<code>role="tablist"</code></li>
-                          <li>選到的頁籤項加<code>aria-selected="true"</code>，未選到的頁籤項加<code>aria-selected="false"</code></li>
-                        </ol>
-                      </li>
-                      <li>
-                        <a href="#">處理頁籤內容區塊</a>
-                        <ol>
-                          <li>為每個作為頁籤內容的容器元件，通常是<code>&lt;div&gt;</code>，加上<code>role="tabpanel"</code></li>
-                          <li>頁籤內容區塊加<code>aria-label="<i>TEXT</i>"</code>，<i>TEXT</i> 帶入對應的頁籤項的文字</li>
-                        </ol>
-                      </li>
-                      <li>
-                        <a href="#">讓頁籤項與頁籤內容產生關連</a>
-                        <ol>
-                          <li>頁籤內容區塊加<code>id="<i>ID</i>"</code>，對應的頁籤項加<code>aria-controls="<i>ID</i>"</code></li>
-                          <li>例如，第一個頁籤項<code>aria-controls="tabpanel-1"</code>，其控制的內容<code>id="tabpanel-1"</code></li>
-                        </ol>
-                      </li>
+                      <li>隨機抽選</li>
+                      <li>地方政府提出符合條件的國民法官初選名冊。</li>
                     </ul>
                   </div>
                 </div>
                 <div class="tabContent" role="tabpanel">
                   <div class="content">
                     <ul>
-                      <li>
-                        <a href="#">頁籤二內容</a>
-                      </li>
-                      <li>
-                        <a href="#">人運部界政那我金後北製？差藥當兩；面下推的從不票她走子文內另來一得</a>
-                      </li>
-                      <li>
-                        <a href="#">機子年安才生家更前陽象望土福開人道高投了初幾的我辦量部念地中是基</a>
-                      </li>
-                      <li>
-                        <a href="#">只利她遊是態遠他大久呢來皮研，來三了裡後半物國檢。</a>
-                      </li>
+                      <li>組成審核小組</li>
+                      <li>排除「不符法定資格」的情形。</li>
+                      <li>法院通知合格之國民，次年度可能擔任國民法官。</li>
                     </ul>
                   </div>
                 </div>
                 <div class="tabContent" role="tabpanel">
                   <div class="content">
                     <ul>
-                      <li>
-                        <a href="#">頁籤三內容</a>
-                      </li>
-                      <li>
-                        <a href="#">頁籤三內容</a>
-                      </li>
-                      <li>
-                        <a href="#">林人還是答以學領進保後錢愛而營，母石時以是養人年！</a>
-                      </li>
-                      <li>
-                        <a href="#">獲親應歌治前方相分之被參大治打地國許聲引會賣試萬只只業臺做不什北反照人機止了造人企！</a>
-                      </li>
+                      <li>法院受理案件後，從複選名冊中隨機抽選一定數量之候選國民法官（例如50名）。</li>
+                      <li>通知選任期日到庭（表明不具資格或有正當理由拒絕參與者，可不到庭）。</li>
                     </ul>
                   </div>
                 </div>
                 <div class="tabContent" role="tabpanel">
                   <div class="content">
-                    <ul>
-                      <li>
-                        <a href="#">頁籤四內容</a>
-                      </li>
-                      <li>
-                        <a href="#">天一己有門起下模大且只身民家三歌先媽斯率高觀我張高看經。</a>
-                      </li>
-                      <li>
-                        <a href="#">上總簡能主意無百過可們的不來。</a>
-                      </li>
-                      <li>
-                        <a href="#">早進立研最題，滿微升我以我麗什綠是手時國聽感他球明定</a>
-                      </li>
-                      <li>
-                        <a href="#">步第完出著興就年題樣程用是著則分除到手人件些策不制爭人。 </a>
-                      </li>
-                    </ul>
+                    <div class="title">於選任期日進行詢問</div>
+                    <div class="result">
+                      <span>結果一</span> 不符資格
+                    </div>
+                    <div class="result">
+                      <span>結果二</span> 符合資格但有權拒絕者拒絕擔任 <img src="images/customize/svg/boom_no.svg" alt="">
+                    </div>
+                    <div class="result resultSpan">
+                      <span class="dark">結果三</span> 符合資格並被抽選到 <img src="images/customize/svg/boom_yes.svg" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -424,7 +370,7 @@
       <!-- 要做哪些事 start -->
       <section id="section5-1" class="col-12 full">
         <div class="container">
-          <h1>國民法官審理程序</h1>
+          <div class="h1">國民法官審理程序</div>
           <h2>
             <span>國民法官要做哪些事？</span>
           </h2>
@@ -679,7 +625,7 @@
       <div class="menuDots"><a href="#section5-1"></a></div>
       <div class="menuDots"><a href="#section5-2"></a></div>
       <div class="menuDots"><a href="#section6"></a></div>
-      <div class="menuDots"><a href="#section"></a></div>
+      <div class="menuDots"><a href="#section7"></a></div>
     </div>
   </div>
   <!-- title animation -->

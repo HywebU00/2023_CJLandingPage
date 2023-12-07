@@ -5,9 +5,9 @@
 //   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 // }
 
-img {
-  max-width: 100%;
-}
+// img {
+//   max-width: 100%;
+// }
 
 //https://css-tricks.com/snippets/sass/maintain-aspectRatio-mixin/
 @mixin aspectRatio($width, $height, $objectFit: contain) {
