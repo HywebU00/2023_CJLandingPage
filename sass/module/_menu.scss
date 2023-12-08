@@ -136,6 +136,9 @@
         outline: none;
         font-size: rem(18);
         text-decoration: none;
+        @media screen and (max-width: 1200px) {
+          font-size: rem(16);
+        }
       }
       ul {
         display: none;

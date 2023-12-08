@@ -44,7 +44,7 @@ body {
 }
 .main {
   position: relative;
-  margin: 0 auto 5em;
+  margin: 0 auto 0em;
   // @include screen('mobile') {
   //   padding-top: 60px;
   // }
@@ -187,4 +187,12 @@ body {
 }
 .hidden {
   display: none;
+}
+
+//****** media setting  *******
+
+@media screen and (max-width: 1024px) {
+  .scrollArea {
+    display: none;
+  }
 }
