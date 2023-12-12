@@ -122,9 +122,9 @@ $('.menuBtn').click(function () {
   }
 });
 $('nav ul li a').click(function () {
-  $('.menu').removeClass('active');
+  $('.menuBtn').removeClass('active');
   $('nav ul').removeClass('active');
-  $('.blackBG').removeClass('active');
+  // $('.blackBG').removeClass('active');
 });
 
 $(document).ready(function () {

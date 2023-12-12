@@ -256,12 +256,15 @@
   position: absolute;
   right: 25px;
   top: 41px;
+  height: 30px;
+
   .menuIcon {
     display: none;
     width: 30px;
     position: relative;
     cursor: pointer;
     z-index: 30;
+
     @media screen and (max-width: 1024px) {
       display: block;
     }
