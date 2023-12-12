@@ -8,8 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>司法院：國民法官制度</title>
-
   <!-- style css -->
+  <link rel="stylesheet" href="vendor/wow/animate.css" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- favicon -->
   <link href="images/favicon.png" rel="icon" type="image/x-icon" />
@@ -57,13 +57,11 @@
     <!-- header End -->
     <!-- main Start -->
     <main id="center" class="main">
-      <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
       <section id="section1" class="col-12 full">
-        <div class="" style="max-width: 900px; margin: 0 auto;">
-          <div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:580px; height:420px">
-
-            <canvas id="canvas" width="580" height="420" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
-            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:580px; height:420px; position: absolute; left: 0px; top: 0px; display: block;">
+        <div class="">
+          <div id="animationContainer">
+            <canvas id="canvas"></canvas>
+            <div id="domOverlayContainer">
             </div>
           </div>
         </div>
@@ -486,10 +484,6 @@
                 當事人自主<br>調查證據
                 <div class="mapDetail">由檢察官及辯護人在法庭內展現可證明自己主張的證據（證人、鑑定人、書證、物證）</div>
               </div>
-              <!-- <div class="mapItem">
-        					中間討論
-        					<div class="mapDetail">審理中，必要時可以跟法官進行討論，解除疑惑</div>
-        				</div> -->
               <div class="mapItem wow fadeInUp" data-wow-offset="200">
                 言詞辯論
                 <div class="mapDetail">檢察官、辯護人分別辯論被告有沒有罪、犯什麼罪、要判多重的刑。被害人或其家屬陳述意見，被告最後陳述後辯論終結</div>
@@ -585,7 +579,6 @@
       </section>
       <!-- 怎麼形成判決 end -->
     </main>
-
     <!-- footer Start-->
     <footer>
       <div class="container">
@@ -608,6 +601,7 @@
     <!-- footer End -->
   </div>
   <a href="javascript:;" class="scrollToTop" role="button">回頁首</a>
+  <!-- 側邊按鈕列 start -->
   <div class="scrollArea">
     <div class="scroll">Scroll</div>
     <div class="menuDotsArea">
@@ -621,20 +615,14 @@
       <div class="menuDots"><a href="#section7"></a></div>
     </div>
   </div>
+  <!-- 側邊按鈕列 end -->
   <!-- title animation -->
   <script src="vendor/CreateJS/createjs-2015.11.26.min.js"></script>
   <script src="js/title.js"></script>
   <script src="js/titleAnimation.js"></script>
-  <!-- lazyload -->
-  <script src="vendor/lazyload/lazyload.js"></script>
-  <!-- fancybox -->
-  <!-- <script src="vendor/fancybox/fancybox.js"></script> -->
-  <!-- swiper -->
-  <!-- <script src="vendor/swiper/swiper-bundle.min.js"></script> -->
-  <!-- main js-->
-  <!-- <script src="js/main.js"></script> -->
   <!-- js -->
   <script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+  <script src="vendor/wow/wow.js"></script>
   <script src="js/jqSetting.js"></script>
   <script src="js/customize.js"></script>
 </body>

@@ -39,7 +39,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: $containerMax; //請看_variable.scss
-  position: relative;
+  // position: relative;
   @include containerFixed;
 }
 .main {
@@ -52,7 +52,7 @@ body {
   h2 {
     line-height: 1.25em;
     font-size: rem(40);
-    color: #0948a6;
+
     // color: transparent;
     span {
       display: inline-block;

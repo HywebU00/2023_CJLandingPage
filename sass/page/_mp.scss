@@ -1,70 +1,3 @@
-/////////////////////////////////////////////////////////以下為demo範例///
-
-// 首頁區塊設定
-.mpSlider {
-  .item {
-    img {
-      min-height: 350px;
-      object-fit: cover;
-    }
-    .titleBox {
-      position: absolute;
-      max-width: rem(1200);
-      padding: 20px;
-      width: 100%;
-      margin: auto;
-      inset: 0 0 70px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1;
-      @include screen('mobile') {
-        padding: 20px 60px;
-      }
-      h1,
-      h2 {
-        padding: 0;
-        margin: 0 0 10px;
-        font-size: rem(24);
-        @include screen('mobile') {
-          font-size: rem(18);
-        }
-      }
-      h1 {
-        font-size: rem(40);
-        @include screen('tablet') {
-          font-size: rem(30);
-        }
-        @include screen('mobile') {
-          font-size: rem(22);
-        }
-      }
-      p {
-        margin: 0;
-        font-size: rem(16);
-      }
-    }
-    .txtBox {
-      position: absolute;
-      background: rgb(8 31 56/80%);
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      .txt {
-        font-size: rem(18);
-        padding: 20px;
-        width: 100%;
-        margin: 0 auto;
-        color: #fff;
-        max-width: 75rem;
-        @include screen('tablet') {
-          font-size: rem(16);
-        }
-      }
-    }
-  }
-}
 section {
   padding-bottom: rem(100);
   .titleBox {
@@ -77,7 +10,7 @@ section {
     }
   }
   .listBox {
-    margin-bottom: 30px;
+    margin-bottom: rem(30);
   }
   .more {
     display: block;
@@ -93,12 +26,52 @@ section {
   }
   .h1 {
     margin: 34px 0;
-    font-size: 52px;
+    font-size: rem(52); //52px;
     color: #207ddc;
     letter-spacing: 2.3px;
     font-weight: 900;
     text-align: center;
     line-height: rem(52);
+  }
+  h2 {
+    margin: 0;
+    color: transparent;
+    letter-spacing: 2.3px;
+    margin: 0;
+    position: relative;
+    font-weight: 900;
+    padding-top: 150px;
+    &.over {
+      color: $primary;
+    }
+    span {
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 50px;
+        bottom: 0;
+        right: 0;
+        background-color: $primary;
+        transition: 0.3s;
+      }
+    }
+    &.start {
+      span {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    &.over {
+      span {
+        &::after {
+          width: 0;
+        }
+      }
+    }
   }
 }
 
@@ -111,15 +84,14 @@ section {
   min-height: 882px;
   position: relative;
   overflow: hidden;
-  // @media screen and (max-width: 600px) {
-  //   background-image: url('../images/customize/kv_m.jpg');
-  // }
 }
-#animation_container {
+#animationContainer {
   position: absolute;
   left: 800px;
   top: 300px;
   z-index: 1;
+  width: 580px;
+  height: 420px;
   &::after {
     content: '';
     width: 1200px;
@@ -127,29 +99,31 @@ section {
     background-image: url('../images/customize/svg/KVline.svg');
     background-repeat: no-repeat;
     position: absolute;
-    top: -288px;
-    right: 226px;
+    top: rem(-288); //-288px;
+    right: rem(226); //226px;
     z-index: -1;
   }
-  // @media screen and (max-width: 1600px) {
-  //   left: auto;
-  //   right: 220px;
-  // }
-  // @media screen and (max-width: 1024px) {
-  //   left: 0;
-  //   right: 0;
-  //   margin: auto;
-  //   transform: scale(0.9);
-  // }
-  // @media screen and (max-width: 600px) {
-  //   transform: scale(0.8);
-  //   &::after {
-  //     right: 166px;
-  //   }
-  // }
+  #canvas {
+    width: 580px;
+    height: 420px;
+    position: absolute;
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+#domOverlayContainer {
+  pointer-events: none;
+  overflow: hidden;
+  width: 580px;
+  height: 420px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: block;
 }
 #section2 {
-  padding-bottom: rem(150);
+  padding-bottom: 150px;
+  // overflow: hidden;
   .container {
     max-width: 1100px;
     .what {
@@ -167,23 +141,19 @@ section {
         position: relative;
         top: -100px;
         z-index: 1;
-        max-width: rem(569);
+        max-width: 569px;
       }
       &::after {
         content: '';
         display: block;
         position: absolute;
-        background-color: #ffbe23;
+        background-color: $secondary;
         height: 450px;
         width: 600px;
         left: 0px;
         bottom: 50px;
       }
     }
-  }
-  h2 {
-    margin: 0;
-    padding-top: rem(150);
   }
   .yr {
     font-size: 18px;
@@ -194,26 +164,10 @@ section {
     line-height: 24px;
     width: 85%;
   }
-  // @media screen and (max-width: 1200px) {
-  //   .container {
-  //     .whatImg {
-  //       img {
-  //         max-width: 100%;
-  //       }
-  //     }
-  //   }
-  // }
-  // @media screen and (max-width: 1024px) {
-  //   .container {
-  //     .whatImg {
-  //       display: none;
-  //     }
-  //   }
-  // }
 }
 #section3 {
   padding-bottom: 100px;
-
+  overflow: hidden;
   .title {
     max-width: 1100px;
   }
@@ -235,7 +189,7 @@ section {
     z-index: 2;
     span {
       font-weight: 400;
-      font-size: 20px;
+      font-size: rem(20);
     }
     &::after {
       content: '';
@@ -254,20 +208,19 @@ section {
     padding: 0;
   }
   .whoSlideTitle {
-    font-size: 32px;
+    font-size: rem(32); //32px;
     color: #fff;
-    /* font-weight: 200; */
+
     text-align: center;
     margin-top: 20px;
     position: relative;
     span {
-      font-size: 80px;
+      font-size: rem(80); //80px;
     }
   }
   .whoSlide {
     .slide1 {
       background-color: $primary;
-      /* border-left: solid 70px #fafafa; */
       position: relative;
       margin-bottom: 80px;
       height: 400px;
@@ -279,13 +232,13 @@ section {
         bottom: -73px;
         width: 220px;
         background-image: url('../images/customize/svg/3.svg');
-        height: rem(310);
+        height: 310;
       }
       .item {
         color: #fff;
         font-size: 20px;
         text-align: left;
-        // width: 42%;
+
         line-height: 1.5;
         padding: 0px 50px 0;
         letter-spacing: 2px;
@@ -300,7 +253,6 @@ section {
           display: block;
         }
         &:first-child {
-          // width: 20%;
           width: 33%;
           padding-top: 30px;
           padding-right: 0;
@@ -308,7 +260,6 @@ section {
         }
         &:nth-child(2) {
           width: 42%;
-          // width: 28%;
         }
         &:first-child,
         &:nth-child(2) {
@@ -347,18 +298,16 @@ section {
         color: #000;
       }
       background-color: $secondary;
-      /* border-right: solid 50px #fafafa; */
       position: relative;
       height: 670px;
       &::after {
         content: '';
         position: absolute;
-
         left: -87px;
         bottom: -73px;
         width: 220px;
         background-image: url('../images/customize/svg/6.svg');
-        height: rem(310);
+        height: 310px;
       }
       .goddess {
         position: absolute;
@@ -398,7 +347,7 @@ section {
           .title {
             color: $primary;
             border-bottom: 1px solid $primary;
-            font-size: 20px;
+            font-size: rem(20); //20px;
             font-weight: bold;
             padding-bottom: 10px;
             width: 80px;
@@ -406,7 +355,7 @@ section {
           }
           .text {
             color: #000;
-            font-size: 17px;
+            font-size: rem(17); //17px;
             margin-top: 15px;
             letter-spacing: 0.75px;
             line-height: 24px;
@@ -429,7 +378,6 @@ section {
   .whoItem,
   .who2Item {
     display: flex;
-    // justify-content: space-between;
     margin-top: 50px;
   }
   .slide {
@@ -438,9 +386,9 @@ section {
   }
 }
 #section4 {
-  padding-bottom: rem(150);
+  padding-bottom: 150px;
   h2 {
-    padding-top: rem(150);
+    padding-top: 150px;
     text-align: center;
   }
   h3 {
@@ -449,7 +397,7 @@ section {
     text-align: center;
     span {
       font-weight: 400;
-      font-size: 20px;
+      font-size: rem(20);
     }
     &::after {
       content: '';
@@ -473,13 +421,13 @@ section {
   }
   .tabContent {
     .title {
-      font-size: 20px;
+      font-size: rem(20); //20px;
       font-weight: bold;
       color: $primary;
       margin-bottom: 10px;
     }
     .result {
-      font-size: 16px;
+      font-size: rem(16); //16px;
       font-weight: bold;
       margin: 5px 0;
       position: relative;
@@ -495,7 +443,7 @@ section {
         height: 35px;
         color: #fff;
         background-color: #ed776b;
-        line-height: rem(35);
+        line-height: 35px;
         border-radius: 17.5px;
         text-align: center;
         margin-right: 15px;
@@ -520,7 +468,7 @@ section {
   text-align: center;
   margin-top: 30px;
   h2 {
-    padding-top: rem(150);
+    padding-top: 150px;
     margin-bottom: 50px;
     span {
       position: relative;
@@ -548,7 +496,7 @@ section {
   margin-top: 30px;
   padding-bottom: 0;
   .h1 {
-    padding-top: rem(150);
+    padding-top: 150px;
   }
   h2 {
     padding-top: 50px;
@@ -559,14 +507,14 @@ section {
 }
 #section5-2 {
   text-align: center;
-  padding-top: rem(150);
+  padding-top: 150px;
   margin-top: 30px;
   .slide4title {
-    font-size: 32px;
+    font-size: rem(32); //32px;
   }
   p {
     text-align: left;
-    font-size: 20px;
+    font-size: rem(20); //20px;
     margin: 30px auto;
     width: 70%;
     text-indent: -25px;
@@ -602,7 +550,7 @@ section {
         margin-bottom: 40px;
         font-weight: 600;
         position: relative;
-        font-size: 20px;
+        font-size: rem(20); //20px;
         &:nth-child(even) {
           background-color: $secondary;
           color: #0e51b6;
@@ -610,7 +558,7 @@ section {
         p {
           position: absolute;
           color: #fff;
-          font-size: 19.5px;
+          font-size: rem(19.5); //19.5px;
           right: -490px;
           top: 0px;
           width: 460px;
@@ -722,7 +670,7 @@ section {
             border-radius: 50%;
             background-color: #fff;
             color: $primary;
-            font-size: 30px;
+            font-size: rem(30); //30px;
             line-height: 50px;
             position: relative;
             border: none;
@@ -737,7 +685,7 @@ section {
         li {
           &:first-child {
             p {
-              font-size: 32px;
+              font-size: rem(32); //32px;
               letter-spacing: 1.6px;
               font-weight: 300;
               line-height: 1.2;
@@ -821,27 +769,31 @@ section {
 }
 
 #section6 {
+  > div {
+    position: relative;
+  }
   h3 {
     position: relative;
     z-index: 2;
     text-align: center;
     span {
-      font-size: 20px;
+      font-size: rem(20); //20px;
       font-weight: 400;
     }
   }
   h2 {
     padding-top: 150px;
     text-align: center;
-    // color: transparent;
-    color: $primary;
+    color: transparent;
+
     &.over {
-      color: $secondary;
+      color: $primary;
     }
   }
 
   .section6Img1,
   .section6Img2 {
+    overflow: hidden;
     img {
       position: sticky;
       top: 150px;
@@ -858,9 +810,10 @@ section {
     }
   }
   .section6Img2 {
-    height: 500px;
+    height: 757px;
+    width: 300px;
     position: absolute;
-    right: -200px;
+    right: 0px;
     bottom: 160px;
   }
   .mapArea {
@@ -915,7 +868,7 @@ section {
     color: #fff;
     margin: 50px auto;
     padding: 9px;
-    font-size: 18px;
+    font-size: rem(18); //18px;
     font-weight: bold;
     border-radius: 17.5px;
     line-height: 24px;
@@ -967,7 +920,7 @@ section {
     border-right: solid 50vw transparent;
     border-bottom: solid 100px transparent;
     position: relative;
-    top: 224px;
+    top: 222px;
   }
 }
 
@@ -980,7 +933,6 @@ section {
   padding-bottom: 100px;
   padding-top: 150px;
   h2 {
-    /* color: $secondary; */
     color: transparent;
     text-align: center;
     letter-spacing: 2.3px;
@@ -999,7 +951,7 @@ section {
     z-index: 2;
     color: #fff;
     span {
-      font-size: 20px;
+      font-size: rem(20); //20px;
       font-weight: 400;
     }
     &:after {
@@ -1015,7 +967,7 @@ section {
     }
   }
   .howTitle {
-    font-size: 30px;
+    font-size: rem(30); //30px;
     color: $secondary;
     position: relative;
     font-weight: bold;
@@ -1038,15 +990,15 @@ section {
     z-index: 1;
     position: relative;
     .howTitle {
-      font-size: 30px;
-      color: #ffbe23;
+      font-size: rem(30); //30px;
+      color: $secondary;
       font-weight: bold;
       &::after {
         content: '？';
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        background-color: #ffbe23;
+        background-color: $secondary;
         color: #fff;
         position: absolute;
         top: 0;
@@ -1067,7 +1019,7 @@ section {
       }
       .sub {
         color: #fff;
-        font-size: 20px;
+        font-size: rem(20); //20px;
         margin-top: 15px;
         font-weight: normal;
         line-height: 1.35;
@@ -1097,7 +1049,7 @@ section {
     .howTitle {
       color: $primary;
       position: relative;
-      font-size: 30px;
+      font-size: rem(30); // 30px;
       font-weight: bold;
       margin-bottom: 50px;
       margin-left: rem(60);
@@ -1130,7 +1082,7 @@ section {
         border-bottom: 1px solid #fff;
         padding-bottom: 10px;
         position: relative;
-        font-size: 20px;
+        font-size: rem(20); //20px;
         margin-top: 15px;
         font-weight: normal;
         line-height: 1.35;
@@ -1152,7 +1104,7 @@ section {
           display: block;
           width: 0;
           height: 0;
-          border-top: solid 7px #ffbe23;
+          border-top: solid 7px $secondary;
           border-left: solid 9px transparent;
           border-right: solid 9px transparent;
           border-bottom: solid 7px transparent;
@@ -1188,8 +1140,6 @@ section {
     position: relative;
     z-index: 2;
     top: -50px;
-    /* padding-top: 100px; */
-    /* box-shadow: -20px 35px 0 $secondary; */
     border-radius: 5px;
     padding: 50px;
     &::before {
@@ -1207,7 +1157,6 @@ section {
     }
     .howTitle {
       color: $primary;
-      float: none;
       width: 580px;
       margin: auto;
       position: relative;
@@ -1238,17 +1187,12 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  // @media screen and (max-width: 768px) {
-  //   .block5 {
-  //     margin: 100px auto 5px;
-  //   }
-  // }
 }
 
 //****** media setting  *******
 
 @media screen and (max-width: 1600px) {
-  #animation_container {
+  #animationContainer {
     left: auto;
     right: 220px;
   }
@@ -1276,7 +1220,7 @@ section {
           p {
             right: -390px;
             width: 360px;
-            font-size: 18px;
+            font-size: rem(18); //18px;
           }
         }
       }
@@ -1293,28 +1237,69 @@ section {
   }
 }
 @media screen and (max-width: 1024px) {
-  #animation_container {
+  #animationContainer {
     left: 0;
     right: 0;
     margin: auto;
     transform: scale(0.9);
   }
   #section2 {
+    padding-bottom: 50px;
+    h2 {
+      font-size: rem(28);
+    }
+    h3 {
+      font-size: rem(18);
+    }
     .container {
+      .whatText {
+        flex: 0 0 70%;
+
+        max-width: 90%;
+      }
       .whatImg {
         display: none;
       }
     }
   }
   #section3 {
+    padding-bottom: 100px;
+    .h1 {
+      font-size: rem(40);
+    }
     h2 {
+      font-size: rem(28);
+      width: 90%;
+      margin: 0 auto;
       img {
         display: none;
       }
     }
+    h3 {
+      width: 90%;
+      margin: 0 auto;
+      font-size: rem(18);
+      margin-bottom: 30px;
+      span {
+        font-size: rem(15);
+      }
+    }
+    .whoSlideTitle {
+      span {
+        font-size: rem(60);
+      }
+      font-size: rem(18);
+    }
     .whoSlide {
       .slide1 {
         height: auto;
+        &::after {
+          width: 75px;
+          top: -30px;
+          left: 30px;
+          height: 105px;
+          background-repeat: no-repeat;
+        }
       }
       .whoItem {
         display: block;
@@ -1326,7 +1311,7 @@ section {
           border-right: none !important;
           padding: 0;
           padding-left: 0 !important;
-          font-size: 15px;
+          font-size: rem(15); //15px;
           margin-bottom: 20px;
           padding-bottom: 20px;
           border-bottom: 1px solid #ffe282;
@@ -1357,7 +1342,7 @@ section {
             display: block;
             width: 0;
             height: 0;
-            border-top: solid 5px #0948a6;
+            border-top: solid 5px $primary;
             border-left: solid 7px transparent;
             border-right: solid 7px transparent;
             border-bottom: solid 5px transparent;
@@ -1370,11 +1355,8 @@ section {
       }
       .slide2 {
         height: auto;
-        padding-bottom: 10px;
+        padding: 20px 80px 20px 50px;
 
-        // .goddess {
-        //   display: none;
-        // }
         .who6ItemArea {
           height: auto;
           display: block;
@@ -1405,6 +1387,143 @@ section {
             }
           }
         }
+        &::after {
+          width: 80px;
+          top: -20px;
+          left: 23px;
+          height: 113px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  #section4 {
+    padding-bottom: 100px;
+
+    h2 {
+      span {
+        font-size: rem(28);
+      }
+      margin-bottom: 15px;
+      padding-top: 100px;
+    }
+    h3 {
+      margin-top: 0;
+      font-size: rem(18); //18px;
+
+      span {
+        font-size: rem(15);
+        line-height: 30px;
+        display: block;
+      }
+      &::after {
+        width: 350px;
+      }
+    }
+    .tabSet {
+      .tabItems {
+        button {
+          font-size: rem(15);
+          &.active {
+            border: solid 5px $primary;
+            &::before {
+              bottom: -22px;
+            }
+          }
+        }
+      }
+    }
+    .tabContent {
+      width: 90%;
+      padding: 10px 20px;
+      margin: 0 auto;
+      font-size: rem(18);
+      box-shadow: -5px 10px 0 $primary;
+      .title {
+        font-size: rem(18);
+      }
+      .result {
+        font-size: 15px;
+        text-indent: -88px;
+        margin-left: 80px;
+        span {
+          width: 70px;
+          height: 25px;
+          line-height: 25px;
+          margin-right: 15px;
+          text-indent: initial;
+        }
+        img {
+          width: 55px;
+          top: -55px;
+          left: 175px;
+        }
+        &:last-child {
+          img {
+            left: 225px;
+          }
+        }
+        &.resultSpan {
+          margin: 15px 0;
+          margin-left: 80px;
+        }
+      }
+    }
+  }
+  #section5 {
+    h2 {
+      padding-top: 100px;
+      span {
+        font-size: rem(28);
+      }
+      margin-bottom: 50px;
+      img {
+        top: -10px;
+      }
+    }
+    h3 {
+      font-size: rem(18);
+    }
+  }
+  #section5-1 {
+    .h1 {
+      padding-top: 50px;
+      font-size: rem(40);
+    }
+    h2 {
+      padding-top: 0px;
+      margin-bottom: 15px;
+      span {
+        font-size: rem(28);
+      }
+    }
+    h3 {
+      font-size: rem(18);
+      margin: 0;
+    }
+  }
+  #section5-2 {
+    h2 {
+      padding-top: 0px;
+      margin-bottom: 0px;
+      span {
+        font-size: rem(28);
+      }
+    }
+    h3 {
+      font-size: rem(18);
+      margin: 0;
+    }
+    .slide4title {
+      font-size: rem(24);
+      width: 80%;
+      margin: 0 auto;
+    }
+    .workSlide {
+      .slide {
+        .workSlideText {
+          // margin: 0 auto;
+        }
       }
     }
   }
@@ -1420,21 +1539,37 @@ section {
       .slide {
         margin: 0 auto;
         .workSlideText {
-          width: 100%;
+          width: 90%;
+          margin: 0 auto;
         }
       }
     }
   }
   #section6 {
+    padding-bottom: 0;
+    &::after {
+      top: 122px;
+    }
+    h2 {
+      padding-top: 100px;
+      font-size: rem(28);
+    }
+    h3 {
+      font-size: rem(18);
+      span {
+        font-size: rem(15);
+      }
+    }
     .section6Img1,
     .section6Img2 {
       display: none;
     }
     .mapArea {
       margin: 50px 0;
+      margin-bottom: 0px;
     }
     .mapItem {
-      font-size: 15px;
+      font-size: rem(15); // 15px;
       width: 80px;
       padding: 5px;
       margin: 30px auto;
@@ -1442,7 +1577,7 @@ section {
       &:nth-child(even) {
         .mapDetail {
           left: 120px;
-          font-size: 15px;
+          font-size: rem(15); //15px;
         }
       }
       &:nth-child(odd) {
@@ -1466,15 +1601,33 @@ section {
       justify-content: space-between;
       margin: auto;
     }
+    .mapHead {
+      margin: 60px auto;
+      width: 75px;
+      height: 75px;
+    }
   }
   #section7 {
     background-image: url('../images/customize/4job_m.jpg');
     background-size: 100%;
+    h2 {
+      padding-top: 100px;
+      margin-bottom: 15px;
+      span {
+        font-size: rem(28);
+      }
+    }
+    h3 {
+      font-size: rem(18);
+    }
     .block {
       width: 90%;
+      padding: 60px 30px;
     }
     .block1 {
-      margin-top: rem(200);
+      margin-top: 200px;
+      height: auto;
+
       &::after {
         top: -182px;
         right: 50px;
@@ -1483,14 +1636,105 @@ section {
       }
     }
     .block2 {
+      height: auto;
       &::after {
         display: none;
       }
     }
+    .block1,
+    .block2,
+    .block3 {
+      .howTitle {
+        font-size: rem(18);
+        &:after {
+          width: 50px;
+          height: 50px;
+          left: -60px;
+          font-size: 32px;
+          line-height: 50px;
+        }
+        &::before {
+          content: '';
+          width: 50px;
+          height: 50px;
+          top: 5px;
+          left: -65px;
+        }
+        .sub {
+          font-size: rem(15);
+        }
+      }
+    }
+    .block3 {
+      margin-top: 0;
+    }
   }
 }
 @media screen and (max-width: 768px) {
+  #section2 {
+    h2 {
+      padding-top: 100px;
+    }
+    .yr {
+      width: 100%;
+    }
+    .container {
+      .whatText {
+        flex: 0 0 85%;
+      }
+    }
+  }
+  #section4 {
+    h2 {
+      margin-top: 0;
+    }
+    .tabSet {
+      margin-top: 50px;
+      .tabItems {
+        button {
+          width: 90px;
+          height: 90px;
+          margin: 10px;
+          &::after {
+            border-top: solid 6px transparent;
+            border-left: solid 8px $primary;
+            border-right: solid 6px transparent;
+            border-bottom: solid 6px transparent;
+            left: -15px;
+            top: calc(50% - 6px);
+          }
+        }
+      }
+    }
+  }
+  #section5-2 {
+    h2 {
+      margin-top: 0;
+    }
+  }
+  #section3 {
+    .whoSlide {
+      .slide2 {
+        padding: 20px 50px 20px 50px;
+      }
+      .slide {
+        &:after {
+          width: 65px;
+        }
+      }
+    }
+  }
+  #section6 {
+    h2 {
+      margin-top: 0;
+    }
+  }
   #section7 {
+    padding-bottom: 0;
+
+    .block4 {
+      box-shadow: -10px 20px 0 $secondary;
+    }
     .block5 {
       margin: 100px auto 5px;
     }
@@ -1500,10 +1744,156 @@ section {
   #section1 {
     background-image: url('../images/customize/kv_m.jpg');
   }
-  #animation_container {
+  #animationContainer {
     transform: scale(0.8);
     &::after {
       right: 166px;
+    }
+  }
+  #section5,
+  #section5-1,
+  #section5-2 {
+    .workSlide {
+      ul {
+        li {
+          p {
+            width: 300px;
+            right: -330px;
+            font-size: rem(15);
+          }
+        }
+      }
+    }
+  }
+  #section7 {
+    .block1 {
+      padding-left: 80px;
+    }
+    background-size: 100%;
+    background-position: center top;
+    background-attachment: unset;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 520px) {
+  #section4 {
+    .tabSet {
+      .tabItems {
+        button {
+          width: 85px;
+          height: 85px;
+          margin: 5px;
+          font-size: 14px;
+          &::after {
+            left: -8px;
+          }
+          &.active {
+            &::after {
+              left: -11px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #section5,
+  #section5-1,
+  #section5-2 {
+    .workSlide .slide {
+      ul {
+        padding-left: 15px;
+        li {
+          &:first-child {
+            p {
+              font-size: rem(24);
+            }
+          }
+          p {
+            left: 85px;
+            width: 210px;
+          }
+        }
+      }
+    }
+  }
+  #section5-1 {
+    .workSlide .slide {
+      ul {
+        li {
+          &:first-child {
+            p {
+              font-size: rem(15);
+            }
+          }
+        }
+      }
+    }
+  }
+  #section6 {
+    .sectionWrapper {
+      max-width: 300px;
+    }
+    .mapDetail {
+      width: 200px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+    .mapItem {
+      margin: 60px auto;
+      &:nth-child(3) {
+        margin-bottom: 0px;
+      }
+      &:nth-child(9) {
+        margin-bottom: 80px;
+      }
+    }
+    .mapHead {
+      &:first-child {
+        &:after {
+          height: 1100px;
+        }
+      }
+    }
+  }
+  #section7 {
+    h2 {
+      padding-top: 50px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  #section4 {
+    .tabContent {
+      .result {
+        &:last-child {
+          img {
+            right: -20px;
+            top: -10px;
+            left: unset;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  #section4 {
+    .tabSet {
+      .tabItems {
+        button {
+          width: 75px;
+          height: 75px;
+          margin: 5px;
+        }
+      }
+    }
+    .tabContent {
+      .result {
+        img {
+          width: 55px;
+          left: 144px;
+        }
+      }
     }
   }
 }
